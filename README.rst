@@ -709,3 +709,40 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+HTTP Protocol
+When a web browser, such as Google Chrome or Mozilla Firefox, initiates a request to retrieve a web page, it follows the HTTP (Hypertext Transfer Protocol) standard. This protocol governs the communication between the client (the browser) and the server (which hosts the requested web page).
+
+Request Generation:
+
+The browser constructs an HTTP request message. This message typically includes:
+The request method (e.g., GET, POST, PUT, DELETE) indicating the action to be performed.
+The URL of the requested resource, including the domain name (e.g., google.com) and the specific path (e.g., /index.html).
+Additional headers providing metadata about the request, such as user-agent information, cookies, and content type preferences.
+Sending the Request:
+
+Once the request message is prepared, the browser sends it over the network to the appropriate server. This involves establishing a TCP (Transmission Control Protocol) connection to the server's IP address and port specified in the URL.
+If the request is for a secure resource (using HTTPS), an SSL/TLS handshake occurs to encrypt the data transmitted over the network.
+Server Processing:
+
+Upon receiving the request, the web server processes it based on the specified URL and request method.
+The server may perform various actions, such as fetching data from a database, executing server-side scripts (e.g., PHP, Python), or retrieving static files (e.g., HTML, CSS, JavaScript).
+Response Generation:
+
+After processing the request, the server generates an HTTP response message. This message consists of:
+A status code indicating the outcome of the request (e.g., 200 for success, 404 for not found, 500 for server error).
+Response headers providing additional information about the response, such as content type, cache directives, and server details.
+The response body containing the actual content to be displayed in the browser (e.g., HTML markup, JSON data).
+Sending the Response:
+
+The server sends the response message back to the browser over the established TCP connection.
+If the connection is using SSL/TLS (HTTPS), the response data is encrypted to ensure confidentiality.
+Browser Rendering:
+
+Upon receiving the response, the browser interprets the received HTML, CSS, and JavaScript to render the web page.
+The rendering process involves parsing the HTML to create a DOM (Document Object Model) tree, applying CSS styles to construct a render tree, and finally painting the visual elements on the screen.
+Additional Resources:
+
+In addition to the main HTML document, the browser may encounter references to external resources such as images, stylesheets, and scripts embedded within the HTML.
+The browser initiates separate HTTP requests for each of these resources, following a similar process of request generation, sending, server processing, and response handling.
+By adhering to the HTTP protocol, web browsers and servers can effectively communicate and exchange data, enabling the retrieval and display of web content to users worldwide.
